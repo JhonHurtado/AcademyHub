@@ -1,0 +1,191 @@
+/* ====================================
+   TAILWIND + CUSTOM STYLES
+   ==================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+/* ====== SCROLLBAR PERSONALIZADO ====== */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* ====== ANIMACIONES ====== */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* ====== COMPONENTES ====== */
+
+/* Input personalizado */
+.input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition;
+}
+
+.input-field:disabled {
+    @apply bg-gray-100 cursor-not-allowed;
+}
+
+/* Botones */
+.btn-primary {
+    @apply w-full px-4 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition disabled:bg-gray-400 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+    @apply w-full px-4 py-3 bg-gray-200 text-gray-800 font-semibold rounded-lg hover:bg-gray-300 transition;
+}
+
+.btn-small {
+    @apply px-3 py-2 text-sm font-medium rounded transition;
+}
+
+.btn-success {
+    @apply bg-green-600 text-white hover:bg-green-700;
+}
+
+.btn-danger {
+    @apply bg-red-600 text-white hover:bg-red-700;
+}
+
+/* Cards */
+.card {
+    @apply bg-white rounded-lg shadow-sm p-4 border border-gray-100;
+}
+
+.card-hover {
+    @apply card hover:shadow-md transition cursor-pointer;
+}
+
+/* Badges */
+.badge {
+    @apply inline-block px-3 py-1 rounded-full text-sm font-semibold;
+}
+
+.badge-primary {
+    @apply bg-blue-100 text-blue-800;
+}
+
+.badge-success {
+    @apply bg-green-100 text-green-800;
+}
+
+.badge-warning {
+    @apply bg-yellow-100 text-yellow-800;
+}
+
+.badge-danger {
+    @apply bg-red-100 text-red-800;
+}
+
+/* Alert */
+.alert {
+    @apply p-4 rounded-lg border;
+}
+
+.alert-success {
+    @apply bg-green-50 border-green-200 text-green-800;
+}
+
+.alert-danger {
+    @apply bg-red-50 border-red-200 text-red-800;
+}
+
+.alert-warning {
+    @apply bg-yellow-50 border-yellow-200 text-yellow-800;
+}
+
+.alert-info {
+    @apply bg-blue-50 border-blue-200 text-blue-800;
+}
+
+/* Loading spinner */
+.spinner {
+    border: 3px solid #f3f4f6;
+    border-top: 3px solid #3b82f6;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Sidebar toggle */
+.sidebar-toggle {
+    @apply fixed bottom-6 right-6 z-40 lg:hidden;
+}
+
+/* Mobile optimized */
+@media (max-width: 640px) {
+    .container {
+        @apply p-4;
+    }
+
+    .modal {
+        @apply rounded-t-2xl rounded-b-none;
+    }
+}
+
+/* Gradient backgrounds */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.bg-gradient-success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
